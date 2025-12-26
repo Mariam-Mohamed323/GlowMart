@@ -19,11 +19,9 @@ export default function AllOrders() {
   async function getUserOrders(ownerId: string) {
     setIsLoading(true)
     const data = await GetAllOrdersAction(ownerId);
-    // console.log(data);
     setOrders(data)
 
-    console.log("cartOwnerId:", cartOwnerId)
-    // console.log("orders:", orders)
+
     setIsLoading(false)
   }
 

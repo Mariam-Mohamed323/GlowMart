@@ -58,7 +58,6 @@ export default function Profile() {
       setRemovingIds(prev => new Set(prev).add(addressId))
       const data = await RemoveAddressAction(addressId)
       if (data.status == "success") {
-        console.log(data);
         toast.success("Address removed successfully")
         // toast.success(data.message)
         setAddresses(data.data)

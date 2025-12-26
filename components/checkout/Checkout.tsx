@@ -40,7 +40,6 @@ export default function Checkout({ cartId, setCartData }: {
             phone: phoneInput.current?.value
         }
         const data = await CheckoutSessionAction(shippingAddress, cartId)
-        console.log(data);
         if (data.status == "success") {
             window.location.href = data.session.url;
         }
@@ -55,7 +54,6 @@ export default function Checkout({ cartId, setCartData }: {
         }
 
         const data = await CashOrderAction(cartId, shippingAddress)
-        console.log(data);
         if (data.status === "success") {
             toast.success("Order placed successfully 🎉")
             setCartData(null)

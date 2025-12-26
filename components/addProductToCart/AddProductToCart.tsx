@@ -22,7 +22,6 @@ export default function AddToCart({ productId }: { productId: string }) {
             setIsLoading(true)
         const data = await AddToCartAction(productId)
         data.status == "success" && toast.success("Product Added Successfully");
-        console.log(data);
         setCartData(data)
         setIsLoading(false);
         } else {
