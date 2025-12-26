@@ -22,10 +22,10 @@ import AddToWishlist from '@/components/addToWishlist/addToWishlist'
 export default async function BrandDetails({ params }: { params: Params }) {
     let { brandId } = await params
 
-    const brandRes = await fetch(`${process.env.API_URL}/brands/` + brandId)
+    const brandRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/brands/` + brandId)
     const { data: brand }: { data: BrandI } = await brandRes.json()
 
-    const productRes = await fetch(`${process.env.API_URL}/products?brand=${brandId}`)
+    const productRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products?brand=${brandId}`)
     const { data: products }: { data: ProductI[] } = await productRes.json()
     
     return (
