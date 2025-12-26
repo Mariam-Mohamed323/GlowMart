@@ -34,7 +34,7 @@ export default function ResetPassword() {
     }
     return (
         <>
-            <div className='flex justify-center items-center min-h-[70vh]'>
+            <div className='flex justify-center items-center min-h-[70vh] w-[90%] mx-auto'>
                 <div className='w-full max-w-md border-2 rounded-2xl space-y-4 p-5 text-center'>
                     <h1 className='font-bold text-xl'>Reset Password</h1>
                     <Input value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter Your Email'/>

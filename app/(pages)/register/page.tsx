@@ -63,7 +63,7 @@ export default function Register() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center min-h-[75vh]">
+      <div className="flex flex-col justify-center items-center min-h-[75vh] w-[90%] mx-auto">
         <h1 className="mb-3 mt-10 text-2xl font-bold">Register Now and Join Us</h1>
         <Card className='p-5 w-full max-w-sm sm:max-w-md'>
           <Form {...form}>

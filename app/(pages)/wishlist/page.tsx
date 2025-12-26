@@ -28,9 +28,9 @@ export default function Wishlist() {
     return (
         <>
         {loading?<Loading/>:<div className='container mx-auto py-6 px-4'>
-            <h1 className='text-3xl font-bold tracking-tight'>Your Wishlist</h1>
-            <p className='text-muted-foreground mt-1'>{wishlistData?.count} items in your wishlist</p>
-                <div className='grid  gap-6 lg:items-start mt-6'>
+            <h1 className='text-3xl font-bold tracking-tight ms-5'>Your Wishlist</h1>
+            <p className='text-muted-foreground mt-1 ms-5'>{wishlistData?.count} items in your wishlist</p>
+                <div className='grid  gap-6 lg:items-start mt-6 w-[90%] mx-auto'>
                     
                     {wishlistData?.data.map((product)=><div key={product.id} className="flex gap-4 rounded-xl border p-4 shadow-sm bg-card">
                         <Image src={product.imageCover} height={300} width={300} alt={product.title} className='w-24 h-24 rounded-lg object-cover md:w-28 md:h-28' />

@@ -31,7 +31,7 @@ export default function ForgotPassword() {
 
     return (
         <>
-            <div className='flex justify-center items-center min-h-[70vh]'>
+            <div className='flex justify-center items-center min-h-[70vh] w-[90%] mx-auto'>
                 <div className='w-full max-w-md text-center space-y-4 border-2 p-5 rounded-2xl'>
                     <h1 className='text-xl font-bold'>Forgot Password</h1>
                     <Input className='my-4' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)} />

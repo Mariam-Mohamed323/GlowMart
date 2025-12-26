@@ -58,7 +58,7 @@ export default function Login() {
     <>
       <div className='flex flex-col justify-center items-center min-h-[75vh]'>
         <h1 className='my-3 text-2xl font-bold'>Welcome Back !</h1>
-        <Card className='p-5 w-sm'>
+        <Card className="p-5 w-[90%] sm:w-full sm:max-w-sm mx-auto">
           {searchParams.get("error") && <h2 className='text-red-500'>{ searchParams.get("error")}</h2>}
           <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

@@ -16,8 +16,8 @@ export default async function Categories() {
   
   return (
     <>
-      <h2 className='text-3xl font-bold my-4'>Categories</h2>
-      <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+      <h2 className='text-3xl font-bold my-4 ms-5'>Categories</h2>
+      <div className='grid w-[90%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
         {categories.map((category) => <div key={category._id}>
           <Link href={"/categories/" + category._id}>
             <Card>

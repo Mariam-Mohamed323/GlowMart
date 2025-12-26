@@ -26,7 +26,7 @@ export default async function Products() {
     
     return (
         <>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-5'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-5 w-[90%] mx-auto'>
                 {products.map((product) => <div className='' key={product._id}>
                     <Card className=''>
                         <Link href={"/products/" + product._id}>

@@ -13,7 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Brands() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URLgit }/brands`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL }/brands`);
   const { data: brands }: { data: BrandI[] } = await response.json()
   
   // console.log(brands);
@@ -21,8 +21,8 @@ export default async function Brands() {
   
   return (
     <>
-      <h2 className='text-3xl font-bold my-4'>Brands</h2>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 '>
+      <h2 className='text-3xl font-bold my-4 ms-5'>Brands</h2>
+      <div className='grid grid-cols-1 w-[90%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 '>
         {brands.map((brand) => <div key={brand._id} className='hover:shadow-xl transition-all duration-300'>
           <Link href={"/brands/" + brand._id}>
           <Card className=''>

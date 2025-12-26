@@ -29,14 +29,14 @@ export default async function CategoryDetails({ params }: { params: Params }) {
     
     return (
         <>
-            <h1 className='font-bold text-3xl mt-5'>{category.name}</h1>
-            <p className='my-3 text-gray-500'>Products from this brand</p>
+            <h1 className='font-bold text-3xl mt-5 ms-5'>{category.name}</h1>
+            <p className='my-3 text-gray-500 ms-5'>Products from this brand</p>
             {products.length === 0 ?
                 <div className='flex justify-center items-center vh-[40vh]'>
                     <p className="text-gray-500 text-lg font-medium">No products found in this category.</p>
                 </div>
                 :
-                <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
+                <div className='grid w-[90%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                     {products.map((product) => <div key={product._id}>
                         <Card>
                             <Link href={"/products/" + product._id}>

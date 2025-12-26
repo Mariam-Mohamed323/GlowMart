@@ -27,7 +27,7 @@ export default function VerifyCode() {
     }
     return (
         <>
-            <div className='flex justify-center items-center min-h-[70vh]'>
+            <div className='flex justify-center items-center min-h-[70vh] w-[90%] mx-auto'>
                 <div className='w-full max-w-md border-2 rounded-2xl space-y-4 p-5 text-center'>
                     <h1 className='font-bold text-2xl'>Verify Code</h1>
                     <Input className='my-4' placeholder='Enter Reset Code' value={code} onChange={(e) => setCode(e.target.value)} />

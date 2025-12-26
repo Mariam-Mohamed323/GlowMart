@@ -6,6 +6,8 @@ import AddAddress from "@/components/address/Address"
 import { Loader } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { AddressI } from '@/interfaces/address'
+import { Button } from '@/components/ui/button'
+import ChangePassword from '@/components/changePassword/ChangePassword'
 
 
 export default function Profile() {
@@ -15,6 +17,9 @@ export default function Profile() {
 
   const [addresses, setAddresses] = useState<AddressI[]>([])
   const [removingIds, setRemovingIds] = useState<Set<string>>(new Set())
+  
+    const [openChangePassword, setOpenChangePassword] = useState<boolean>(false)
+
   
   
   useEffect(() => {
@@ -76,8 +81,8 @@ export default function Profile() {
 
   return (
     <>
-      <h1 className='text-3xl font-bold tracking-tight mt-6'>Profile</h1>
-      <div className='grid gap-6  lg:items-start mt-6'>
+      <h1 className='text-3xl font-bold tracking-tight mt-6 ms-5'>Profile</h1>
+      <div className='grid gap-6  lg:items-start mt-6 w-[90%] mx-auto'>
         <div className="flex gap-4 rounded-xl border p-4 shadow-sm bg-card">
           <div className='flex-1'>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
@@ -89,6 +94,9 @@ export default function Profile() {
                 <p className=' text-muted-foreground mt-1'>
                   Email: {session.status == "authenticated" && <span className='text-black text-sm'>{ session.data.user.email}</span>}
                 </p>
+                <Button onClick={()=>setOpenChangePassword(true)} className='mt-3' variant="outline" type='button'>Change Password</Button>
+                <ChangePassword open={openChangePassword} onClose={() => setOpenChangePassword(false)} />
+                
               </div>
             </div>
           </div>
