@@ -19,7 +19,7 @@ import AddToWishlist from '@/components/addToWishlist/addToWishlist'
 import AddToCart from '@/components/addProductToCart/AddProductToCart'
 
 export default async function Products() {
-    const response = await fetch(`${process.env.API_URL}/products`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
     
     const { data: products }: { data: ProductI[] } = await response.json()
     // console.log(products);

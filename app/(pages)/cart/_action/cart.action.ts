@@ -5,7 +5,7 @@ import { CartResponse } from "@/interfaces";
 
 export async function RemoveCartAction(productId: string) {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/cart/` + productId, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/` + productId, {
         method: "DELETE",
         headers: {
             token: token!
@@ -18,7 +18,7 @@ export async function RemoveCartAction(productId: string) {
 
 export async function UpdateCartAction(productId: string, count: number) {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/cart/` + productId, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/` + productId, {
         method: "PUT",
         body: JSON.stringify({ count }),
         headers: {
@@ -34,7 +34,7 @@ export async function UpdateCartAction(productId: string, count: number) {
 
 export async function ClearCartAction() {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/cart`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
         method: "DELETE",
         headers: {
             token: token!

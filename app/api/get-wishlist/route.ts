@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/wishlist`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wishlist`, {
         headers: {
             token: token!
         }

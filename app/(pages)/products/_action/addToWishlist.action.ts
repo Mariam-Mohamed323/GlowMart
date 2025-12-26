@@ -4,7 +4,7 @@ import { getUserToken } from "@/app/Helpers/getUserToken"
 
 export async function AddToWishlistAction(productId: string) {
     const token= await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/wishlist`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wishlist`, {
             method: "POST",
             headers: {
                 token: token!,

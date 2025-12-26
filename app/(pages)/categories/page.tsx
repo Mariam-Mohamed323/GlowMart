@@ -10,7 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Categories() {
-  const response = await fetch(`${process.env.API_URL}/categories`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
   const { data: categories }: { data: CategoryI[] } = await response.json()
   // console.log(categories);
   

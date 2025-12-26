@@ -5,7 +5,7 @@ import { WishlistResponse } from "@/interfaces";
 
 export async function RemoveWishlistAction(productId: string) {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/wishlist/` + productId, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wishlist/` + productId, {
             method: "DELETE",
             headers:{
                 token: token!

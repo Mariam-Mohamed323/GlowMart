@@ -4,7 +4,7 @@ import { getUserToken } from "@/app/Helpers/getUserToken";
 
 export async function CashOrderAction(cartId: string, shippingAddress: object) {
     const token = await getUserToken()
-    const response = await fetch(`${process.env.API_URL}/orders/${cartId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders/${cartId}`, {
             method: "POST",
             body: JSON.stringify({ shippingAddress }),
             headers: {

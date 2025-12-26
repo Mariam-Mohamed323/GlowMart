@@ -20,11 +20,11 @@ export default async function CategoryDetails({ params }: { params: Params }) {
     const { categoryId } = await params
     // console.log(categoryId);
 
-    const categoryRes = await fetch(`${process.env.API_URL}/categories/${categoryId}`)
+    const categoryRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories/${categoryId}`)
     const { data: category }: { data: CategoryI } = await categoryRes.json();
     // console.log(category);
 
-    const productRes = await fetch(`${process.env.API_URL}/products?category=${categoryId}`)
+    const productRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products?category=${categoryId}`)
     const { data: products }: { data: ProductI[] } = await productRes.json()
     
     return (

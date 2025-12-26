@@ -4,7 +4,7 @@ import { AddressResponse } from "@/interfaces/address";
 
 export async function GetUserAddressAction() {
     const token = await getUserToken();
-    const response = await fetch(`${process.env.API_URL}/addresses`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/addresses`, {
         headers: {
             token:token!
         }
@@ -18,7 +18,7 @@ export async function GetUserAddressAction() {
 
 export async function AddAddressAction(name: string, details: string, phone: string, city: string) {
     const token = await getUserToken();
-    const response = await fetch(`${process.env.API_URL}/addresses`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/addresses`, {
             method: "POST",
             body: JSON.stringify({ name, details, phone, city }),
             headers: {
@@ -38,7 +38,7 @@ export async function AddAddressAction(name: string, details: string, phone: str
 export async function RemoveAddressAction(addressId: string) {
     const token = await getUserToken()
     
-    const response = await fetch(`${process.env.API_URL}/addresses/${addressId}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/addresses/${addressId}`, {
         method: "DELETE",
         headers: {
             token: token!

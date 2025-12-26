@@ -7,7 +7,7 @@ export async function AddToCartAction(productId: string) {
     const token = await getUserToken()
 
     
-    const response = await fetch(`${process.env.API_URL}/cart`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
         
         method: "POST",
         body: JSON.stringify({ productId }),

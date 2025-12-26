@@ -65,7 +65,7 @@ export default function Register() {
     <>
       <div className="flex flex-col justify-center items-center min-h-[75vh]">
         <h1 className="mb-3 mt-10 text-2xl font-bold">Register Now and Join Us</h1>
-        <Card className='p-5 w-md'>
+        <Card className='p-5 w-full max-w-sm sm:max-w-md'>
           <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
