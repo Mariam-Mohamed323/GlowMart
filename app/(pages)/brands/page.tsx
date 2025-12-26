@@ -13,7 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Brands() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/brands`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URLgit }/brands`);
   const { data: brands }: { data: BrandI[] } = await response.json()
   
   // console.log(brands);
