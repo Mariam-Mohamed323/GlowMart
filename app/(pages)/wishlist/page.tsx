@@ -17,7 +17,6 @@ export default function Wishlist() {
     async function removeWishlistItem(productId: string) {
         setRemovingId(productId);
         const data = await RemoveWishlistAction(productId)
-        console.log(data);
         if (data.status == "success") {
             // setWishlistData(data)
             getWishlist()

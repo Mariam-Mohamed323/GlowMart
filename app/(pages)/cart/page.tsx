@@ -35,7 +35,7 @@ export default function Cart() {
   async function removeCartItem(productId: string) {
     setRemovingId(productId);
     const data = await RemoveCartAction(productId);
-    console.log(data);
+
     if (data.status == "success") {
       toast.success("Product Deleted Successfully");
       setCartData(data)
