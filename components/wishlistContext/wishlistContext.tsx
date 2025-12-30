@@ -25,7 +25,9 @@ export default function WishlistContextProvider({ children }: { children: ReactN
 
         setLoading(true);
 
-        const response = await fetch(`/api/get-wishlist`)
+        const response = await fetch(`/api/get-wishlist`, {
+            credentials: "include"
+        })
         const data: WishlistResponse = await response.json();
         // console.log(data);
         
