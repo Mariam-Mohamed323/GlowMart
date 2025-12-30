@@ -12,7 +12,7 @@ export async function ChangePasswordAction(data: {
     if (!token) {
         throw new Error("Not authenticated")
     }
-    const response = await fetch(`https://ecommerce.routemisr.com/api/v1/users/changeMyPassword`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/changeMyPassword`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
