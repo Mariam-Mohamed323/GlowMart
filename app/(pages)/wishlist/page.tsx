@@ -4,15 +4,28 @@ import { WishlistContext } from '@/components/wishlistContext/wishlistContext'
 import { WishlistResponse } from '@/interfaces'
 import { Loader } from 'lucide-react'
 import Image from 'next/image'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { RemoveWishlistAction } from './_action/wishlist.action'
+import { CartContext } from '@/components/context/CartContext'
+import { AddToCartAction } from '../products/_action/addToCart.action'
+import toast from 'react-hot-toast'
 
 export default function Wishlist() {
     const { wishlistData, loading, getWishlist, setWishlistData } = useContext(WishlistContext)
     const [removingId, setRemovingId] = useState<string | null>(null)
+    const { getCart } = useContext(CartContext)
+
     
 
-    typeof wishlistData?.data[0] == "string" && getWishlist()
+    useEffect(() => {
+  if (
+    wishlistData == null ||
+    typeof wishlistData?.data[0] === "string"
+  ) {
+    getWishlist();
+  }
+}, [wishlistData]);
+
     
     async function removeWishlistItem(productId: string) {
         setRemovingId(productId);
@@ -51,6 +64,15 @@ export default function Wishlist() {
                                 </div>
                             </div>
                             <div className="mt-3 flex items-center justify-between">
+                                <button onClick={async () => {
+                                    await AddToCartAction(product.id);
+                                    await getCart();
+                                    toast.success("Added to cart");
+                                }}
+                                >
+                                    Add to Cart
+                                </button>
+
                                 <button onClick={()=>removeWishlistItem(product.id)} aria-label='remove' className='text-sm cursor-pointer flex text-destructive hover:underline items-center'>
                                     {removingId == product.id && <Loader className='animate-spin' />}
                                     Remove

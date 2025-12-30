@@ -21,15 +21,15 @@ export default function Cart() {
   // {
   //   getCart();
   // } 
-  useEffect(() => {
+useEffect(() => {
   if (
-    cartData == null ||
-    typeof cartData?.data.products[0]?.product === "string"
+    !cartData ||
+    !cartData.data?.products?.length ||
+    typeof cartData.data.products[0].product === "string"
   ) {
     getCart();
   }
 }, [cartData]);
-
 
 
   async function removeCartItem(productId: string) {
