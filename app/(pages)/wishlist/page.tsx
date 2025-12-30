@@ -17,10 +17,11 @@ export default function Wishlist() {
 
     
 
-    useEffect(() => {
+useEffect(() => {
   if (
-    wishlistData == null ||
-    typeof wishlistData?.data[0] === "string"
+    !wishlistData ||
+    !wishlistData.data ||
+    typeof wishlistData.data[0] === "string"
   ) {
     getWishlist();
   }

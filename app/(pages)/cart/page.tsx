@@ -24,8 +24,10 @@ export default function Cart() {
 useEffect(() => {
   if (
     !cartData ||
-    !cartData.data?.products?.length ||
-    typeof cartData.data.products[0].product === "string"
+    !cartData.data ||
+    !cartData.data.products ||
+    cartData.data.products.length === 0 ||
+    typeof cartData.data.products[0]?.product === "string"
   ) {
     getCart();
   }
@@ -71,7 +73,7 @@ useEffect(() => {
 
   return (
     <>
-      {isLoading || typeof cartData?.data.products[0]?.product == "string" ? <Loading /> : cartData?.numOfCartItems! > 0 ? <div className="container mx-auto py-6 px-4">
+      {isLoading || !cartData?.data?.products || typeof cartData.data.products[0]?.product === "string" ? <Loading /> : cartData?.numOfCartItems! > 0 ? <div className="container mx-auto py-6 px-4">
         <h1 className='text-3xl font-bold tracking-tight ms-5'>Shopping Cart</h1>
         <p className='text-muted-foreground mt-1 ms-5'>{cartData?.numOfCartItems} items in your cart</p>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:items-start mt-6 w-[90%] mx-auto'>
