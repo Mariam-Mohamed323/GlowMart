@@ -1,7 +1,7 @@
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
-const protectedPages = ["/cart", "/profile", "/allorders","wishlist"];
+const protectedPages = ["/cart", "/profile", "/allorders","/wishlist"];
 const authPages = ["/login", "/register"];
 
 export default async function proxy(req: NextRequest) {

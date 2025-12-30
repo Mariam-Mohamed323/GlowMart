@@ -17,7 +17,7 @@ export default function Wishlist() {
 
     
 
-useEffect(() => {
+ useEffect(() => {
   if (
     !wishlistData ||
     !wishlistData.data ||
@@ -26,7 +26,6 @@ useEffect(() => {
     getWishlist();
   }
 }, [wishlistData]);
-
     
     async function removeWishlistItem(productId: string) {
         setRemovingId(productId);
