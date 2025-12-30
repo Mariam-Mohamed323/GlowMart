@@ -51,7 +51,7 @@ export default function Login() {
       callbackUrl:"/products",
       redirect: true,
     })
-    console.log(response);
+    // console.log(response);
     setIsLoading(false)
   }
   return (

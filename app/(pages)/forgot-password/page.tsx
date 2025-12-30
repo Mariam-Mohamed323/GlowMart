@@ -16,7 +16,7 @@ export default function ForgotPassword() {
         try {
             setLoading(true)
             const res = await forgotPassword(email)
-            console.log(res);
+            // console.log(res);
             if (res.statusMsg=="success") {
                 router.push("/verify-code")
             } else {

@@ -10,7 +10,7 @@ export const authOptions: AuthOptions = {
                 password:{}
             },
             authorize: async (credentials) => {
-                const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/signin", {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/signin`, {
                     method: "POST",
                     body: JSON.stringify({
                         email: credentials?.email,

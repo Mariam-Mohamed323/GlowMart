@@ -4,7 +4,7 @@ import { RegisterUserResponse, SuccessRegisterResponse, RegisterFailureResponse,
 // SIGN UP
 export async function signUp(userData: RegisterUserResponse): Promise<SignUpResult> {
     try {
-        const response = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/signup`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),
@@ -29,7 +29,7 @@ export async function signUp(userData: RegisterUserResponse): Promise<SignUpResu
 //FORGOT PASSWORD
 
 export async function forgotPassword(email:string) {
-    const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/forgotPasswords`, {
         method: "POST",
         body: JSON.stringify({email}),
         headers: { "Content-Type": "application/json" }
@@ -45,7 +45,7 @@ export async function forgotPassword(email:string) {
 // VERIFY CODE
 
 export async function verifyResetCode(resetCode:string) {
-    const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/verifyResetCode`, {
         method: "POST",
         body: JSON.stringify({ resetCode }),
         headers: { "Content-Type": "application/json" }
@@ -61,7 +61,7 @@ export async function verifyResetCode(resetCode:string) {
 
 // RESET PASSWORD
 export async function resetPassword(email:string,newPassword:string) {
-    const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/resetPassword", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/resetPassword`, {
         method: "PUT",
         body: JSON.stringify({ email, newPassword }),
         headers:{"Content-Type":"application/json"}
