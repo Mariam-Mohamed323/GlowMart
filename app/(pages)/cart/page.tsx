@@ -68,7 +68,7 @@ export default function Cart() {
     setIsClearing(false)
     
   }
-  
+
   return (
     <>
       {isLoading || typeof cartData?.data.products[0]?.product == "string" ? <Loading /> : cartData?.numOfCartItems! > 0 ? <div className="container mx-auto py-6 px-4">
@@ -77,7 +77,7 @@ export default function Cart() {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 lg:items-start mt-6 w-[90%] mx-auto'>
           {/* items details */}
           <div className='lg:col-span-2 space-y-4'>
-            {cartData?.data.products.map((item)=><div key={item._id} className="flex gap-4 rounded-xl border p-4 shadow-sm bg-card">
+            {cartData?.data?.products?.map((item)=><div key={item._id} className="flex gap-4 rounded-xl border p-4 shadow-sm bg-card">
               <Image src={item.product.imageCover} height={300} width={300} alt={item.product.title} className='w-24 h-24 rounded-lg object-cover md:w-28 md:h-28' />
               <div className='flex-1'>
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
